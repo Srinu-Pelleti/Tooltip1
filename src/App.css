@@ -1,137 +1,153 @@
-/* for the outer container */
-.container {
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.grp-name{
+  width: 100vw;
+  padding: 50px;
+  font-size: 35px;
+  font-weight: 700;
+  /* color: #23396B; */
   text-align: center;
-  background-color: #030314;
-  height: 57.4vh;
-  padding: 8rem;
-  color: cornsilk;
 }
-
-/* making the background color different for the seleceted button */
-.selected {
-  background-color: whitesmoke;
-}
-
-/* button container */
-.button-container {
-  margin-left: 4rem;
-  padding: 5px;
-}
-.button-container button {
-  margin-right: 5rem;
-  height: 30px;
-  width: 75px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: solid;
-  color: #030314;
-}
-
-/* toolpit container */
-.tooltipContainer {
+.btn-group{
+  width: 40vw;
+  padding: 50px;
   position: relative;
-  display: inline-block;
-  border: solid;
-  border-bottom: 1px dotted red;
-  margin-top: 7rem;
-  width: 10rem;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #d7e9dc;
-  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-
-/* toolpit style */
-
-/* left style of the toolpit with the arrow */
-.left {
-  padding: 5px;
-  border-radius: 10px;
-  position: relative;
-  left: 27%;
-  margin-top: -2rem;
-}
-.left::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 100%; /* To the right of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent black;
-}
-
-/* right style of the toolpit with the arrow */
-.right {
-  padding: 5px;
-  border-radius: 10px;
-  position: relative;
-  left: 60%;
-  margin-top: -2rem;
-}
-.right::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent;
-}
-
-/* top style of the toolpit with the arrow */
-.Up {
-  padding: 5px;
-  border-radius: 10px;
-  position: relative;
-  left: 44%;
-  margin-top: -80px;
-}
-.Up::after {
-  content: " ";
-  position: relative;
-  top: 100%; /* At the bottom of the tooltip */
-  padding: 10px;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-}
-
-/* bottom style of the toolptit with the arrow */
-.Down {
-  padding: 5px;
-  border-radius: 10px;
+.btn{
   width: fit-content;
+  padding: 1.25rem;
+  background-color: transparent;
+  /* color: #23396B; */
+  font-size: 25px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.active{
+  /* background-image: url(btn.jpg); */
+  background-color: grey;
+  border-radius: 5%;
+  background-size: cover;
+  color: #23396B;
+}
+.hover-group{
+  width: 40vw;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  left: 44%;
-  margin-top: 1rem;
-  width: 30px;
+}
+.pos-box{
+  width:auto;
+  padding:3%;
+  /* outline: none; */
+  border: 3px solid orangered;
+  border-radius:20px;
+  background-color: transparent;
+  font-size: 25px;
   font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: black;
+  color:#fff;
+  text-align: center;
 }
-.Down::after {
-  content: " ";
+.top{
   position: absolute;
-  bottom: 100%; /* At the top of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: outset;
-  border-color: transparent transparent black transparent;
-}
-
-/* text to be shown  */
-#tooltipText {
-  display: table;
-  background-color: whitesmoke;
-  color: black;
-  font-weight: bolder;
-  width: 8rem;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
+  top: 0px;
+  left: auto;
+  background-color: #23396B;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
   border-radius: 5px;
+}
+.top::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #23396B;
+  border-bottom: 20px solid transparent;
+  left: 48%;
+  bottom: -38px;
+}
+.left{
+  position: absolute;
+  left: -80px;
+  top: auto;
+  background-color: #23396B;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.left::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 60px solid #23396B;
+  border-right: 60px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  right: -118px;
+  top: 28%;
+}
+.right{
+  position: absolute;
+  right: -80px;
+  top: auto;
+  background-color: #23396B;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.right::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 60px solid transparent;
+  border-right: 60px solid #23396B;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  left: -118px;
+  top: 28%;
+}
+.bottom{
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  background-color: #23396B;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.bottom::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid #23396B;
+  left: 48%;
+  top: -38px;
 }
